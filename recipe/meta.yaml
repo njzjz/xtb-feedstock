@@ -1,13 +1,13 @@
 {% set name = "xtb" %}
-{% set version = "6.6.1" %}
+{% set version = "6.6.2b0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/grimme-lab/xtb/releases/download/v{{ version }}/xtb-{{ version }}-source.tar.xz
-  sha256: 1c85e3ed66319865e58863fa465999f3048457a078abf3459c78a7f80447cffd
+  url: https://github.com/njzjz/xtb/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 0b9ec28a2f79647a7ec54b9d06120c02d032b58b109e79b30f51f79d29470cfc
 
 build:
   number: 0
@@ -19,7 +19,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
-    - meson
+    - cmake <3.27
     - ninja
     - asciidoctor
     - pkg-config
